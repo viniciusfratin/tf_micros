@@ -56,7 +56,7 @@
 
 
 void decoder_init();
-void decoder_read_counter(char* buf);
+int decoder_read_counter();
 void decoder_clear_counter();
 
 #endif

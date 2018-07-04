@@ -10,13 +10,13 @@ void decoder_init()
 	spi_transfer((uint8_t*)wr_data, (uint8_t*)rd_data);
 }
 
-void decoder_read_counter(char* buf)
+int decoder_read_counter()
 {
 	char wr_data[1] = { READ_CNTR };
-	char rd_data[4];
-	spi_transfer((uint8_t*)wr_data, (uint8_t*)rd_data);
-	
-	memcpy(buf, rd_data, sizeof rd_data);
+	int rd_data;
+	spi_transfer((uint8_t*)wr_data, (uint8_t*)&rd_data);
+
+	return rd_data;
 }
 
 void decoder_clear_counter()

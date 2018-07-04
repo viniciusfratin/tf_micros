@@ -1,5 +1,5 @@
 TARGET=libtf.a
-SRCS=pwm.c
+SRCS=pwm.c spi.c decoder.c motor.c
 
 FLAGS=-O2 -Wall -MMD
 INCLUDE=-I. -I../../include
