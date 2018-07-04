@@ -7,11 +7,11 @@ case "$1" in
 	if [ ! -d /sys/class/pwm/pwmchip0/pwm1 ] ; then
 	    echo -n "1" > /sys/class/pwm/pwmchip0/export
 	fi
-	chgrp pwm /sys/class/pwm/pwmchip0/device/pwm_period
+	chgrp tf /sys/class/pwm/pwmchip0/device/pwm_period
 	chmod g+w /sys/class/pwm/pwmchip0/device/pwm_period
-	chgrp pwm /sys/class/pwm/pwmchip0/pwm1/duty_cycle
+	chgrp tf /sys/class/pwm/pwmchip0/pwm1/duty_cycle
 	chmod g+w /sys/class/pwm/pwmchip0/pwm1/duty_cycle
-	chgrp pwm /sys/class/pwm/pwmchip0/pwm1/enable
+	chgrp tf /sys/class/pwm/pwmchip0/pwm1/enable
 	chmod g+w /sys/class/pwm/pwmchip0/pwm1/enable
         
         # gpio16 = 0 = out
@@ -125,7 +125,7 @@ case "$1" in
 	echo -n "out" > /sys/class/gpio/gpio46/direction
 	echo -n "1" > /sys/class/gpio/gpio46/value
 
-        chgrp spi /dev/spidev1.0
+        chgrp tf /dev/spidev1.0
         chmod g+rw /dev/spidev1.0
     	;;
 
